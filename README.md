@@ -23,3 +23,6 @@ Works on NESPi and SNESPi cases.
 This is pretty much a cleaned up version of:
 - https://github.com/thiagoauler/lakka_nespi_power
 - https://github.com/marcelonovaes/lakka_nespi_power
+
+Inspired by:
+- https://github.com/RetroFlag/retroflag-picase

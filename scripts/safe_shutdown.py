@@ -4,7 +4,7 @@ import sys
 import time
 
 sys.path.append('./lib')
-import lib.RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 
 # initialize pins

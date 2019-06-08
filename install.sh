@@ -27,7 +27,6 @@ wget -O "${MASTER_ARCHIVE_FILE}" "${MASTER_ARCHIVE_URL}"
 unzip -o "${MASTER_ARCHIVE_FILE}"
 cd lakka-retroflag-safe-shutdown/
 mkdir -p /storage/scripts
-cp -R lib/ /storage/scripts/
 cp -R scripts/* /storage/scripts/
 
 # Set autostart
