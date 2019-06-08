@@ -17,6 +17,7 @@ fi
 # Set timezone
 read -p "Enter your timezone [${DEFAULT_TIMEZONE}]:" USER_TIMEZONE
 USER_TIMEZONE=${USER_TIMEZONE:-${DEFAULT_TIMEZONE}}
+echo "Using timezone ${USER_TIMEZONE}"
 echo "TIMEZONE=${USER_TIMEZONE}" > "${TIMEZONE_FILE}"
 
 # Download scripts
@@ -30,12 +31,12 @@ mkdir -p /storage/scripts
 cp -R scripts/* /storage/scripts/
 
 # Set autostart
-if [ ! -f /storage/.config/autostart.sh ]; then
-    echo "python /storage/scripts/safe_shutdown.py &" >> "${AUTOSTART_SCRIPT}"
+if [ ! -f "${AUTOSTART_SCRIPT}" ]; then
+    echo "(cd /storage/scripts && python /storage/scripts/safe_shutdown.py &)" >> "${AUTOSTART_SCRIPT}"
 fi
 
 # Check success
-if grep -Fxq "safe_shutdown.py"  "${AUTOSTART_SCRIPT}"
+if grep -Fxq "safe_shutdown.py" "${AUTOSTART_SCRIPT}"
 then
 	echo "Error installing scripts, autostart configuration failed..."
 	echo "Manually place 'python /storage/scripts/safe_shutdown.py &' in ${AUTOSTART_SCRIPT}"
