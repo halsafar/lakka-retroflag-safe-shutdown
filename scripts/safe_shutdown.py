@@ -11,8 +11,7 @@ import RPi.GPIO as GPIO
 PIN_POWER = 3  # pin 5
 PIN_LED = 14  # TXD
 PIN_RESET = 2  # pin 13
-
-# powerenPin = 4  # pin 5
+PIN_POWEREN = 4  # pin 5
 
 
 def init():
@@ -24,8 +23,8 @@ def init():
     GPIO.setup(PIN_POWER, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.setup(PIN_RESET, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.setup(PIN_LED, GPIO.OUT)
-    # GPIO.setup(powerenPin, GPIO.OUT)
-    # GPIO.output(powerenPin, GPIO.HIGH)
+    GPIO.setup(PIN_POWEREN, GPIO.OUT)
+    GPIO.output(PIN_POWEREN, GPIO.HIGH)
     GPIO.setwarnings(False)
 
 
