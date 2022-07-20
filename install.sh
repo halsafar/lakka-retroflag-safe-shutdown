@@ -26,7 +26,7 @@ wget -O "${MASTER_ARCHIVE_FILE}" "${MASTER_ARCHIVE_URL}"
 
 # Install scripts
 unzip -o "${MASTER_ARCHIVE_FILE}"
-cd lakka-retroflag-safe-shutdown/
+cd lakka-retroflag-safe-shutdown-master/
 mkdir -p /storage/scripts
 cp -R scripts/* /storage/scripts/
 
